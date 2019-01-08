@@ -34,7 +34,7 @@ function getJson($table){
 	echo json_encode($data);
 }
 
-getJson('city_location');
+//getJson('city_location');
 //city_location 城市坐标
 //gdp GDP
 //house_price 房价

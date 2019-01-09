@@ -1,8 +1,5 @@
 <?php
 
-$table = $_GET['t'];
-$year = $_GET['y'];
-
 function getConn(){
 	//获得数据库连接
 	define('MYSQL_HOST','118.24.119.40');
@@ -45,9 +42,6 @@ function getGeo(){
 	}
 	return json_encode($arr,JSON_UNESCAPED_UNICODE);
 }
-
-echo getData($table,$year);
-
 
 // JSON_FORCE_OBJECT 强行转为obj
 //city_location 城市坐标    

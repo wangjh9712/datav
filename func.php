@@ -12,7 +12,7 @@ function getConn(){
 };
 
 function getData($table,$year){
-	//获得$table数据对象
+	//获得$table数据对象 for BMap
 	$conn = getConn();
 	$query = "SELECT * FROM $table";
 	$result = mysqli_query($conn,$query);
@@ -30,7 +30,7 @@ function getData($table,$year){
 };
 
 function getGeo(){
-	//取得地图坐标JSON对象
+	//取得地图坐标JSON对象 for BMap
 	$conn = getConn();
 	$query = "SELECT * FROM city_location";
 	$result = mysqli_query($conn,$query);
@@ -44,7 +44,7 @@ function getGeo(){
 }
 
 function getYearData($table,$area){
-	//一个城市在$table中十年的数据数组
+	//一个城市在$table中十年的数据数组 for multiple-x-axis
 	$conn = getConn();
 	$query = "SELECT * FROM $table WHERE area = '$area'";
 	$result = mysqli_query($conn,$query);
@@ -56,7 +56,23 @@ function getYearData($table,$area){
 	return json_encode($arr,JSON_UNESCAPED_UNICODE);
 }
 
-echo getYearData('gdp','北京');
+function getFullYearData($table,$year){
+	//获得$table数据对象 for mix-timeline
+	$conn = getConn();
+	$query = "SELECT `$year` FROM $table";
+	$result = mysqli_query($conn,$query);
+	$val = array();
+	if(mysqli_num_rows($result) > 0){
+		while($row = mysqli_fetch_row($result)){
+			$arr = (float)$row['0'];
+			array_push($val, $arr);
+		}
+		return json_encode($val,JSON_UNESCAPED_UNICODE);
+	}else{
+		return '0 Data';
+	}
+}
+
 // JSON_FORCE_OBJECT 强行转为obj
 //city_location 城市坐标    
 //gdp GDP

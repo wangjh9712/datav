@@ -75,7 +75,7 @@ function getFullYearData($table,$year){
 }
 
 function getCity(){
-	//获得$table数据对象 for mix-timeline
+	//获得城市列表
 	$conn = getConn();
 	$query = "SELECT * FROM gdp";
 	$result = mysqli_query($conn,$query);
@@ -91,6 +91,22 @@ function getCity(){
 	}
 }
 
+function getRate($area){
+	//2009-2017 常驻人口增长率
+	$conn = getConn();
+	$query = "SELECT * FROM population WHERE area = '$area'";
+	$result = mysqli_query($conn,$query);
+	while($row = mysqli_fetch_row($result)){
+		for($i=1;$i<10;$i++){
+			$a = (float)$row[$i];
+			$b = (float)$row[$i+1];
+			$r = -(1 -($a / $b))*100;
+			$arr[] = $r;
+		}
+	}
+	$arr = array_reverse($arr);
+	return json_encode($arr,JSON_UNESCAPED_UNICODE);
+}
 // JSON_FORCE_OBJECT 强行转为obj
 //city_location 城市坐标    
 //gdp GDP

@@ -1,8 +1,7 @@
 <?php
 
-@$table = $_GET['t'];
-@$year = $_GET['y'];
-@$area = $_GET['a'];
+$table = $_GET['t'];
+$year = $_GET['y'];
 
 function getConn(){
 	//获得数据库连接
@@ -15,21 +14,19 @@ function getConn(){
 	return $conn;
 };
 
-function getData($table,$area,$year){
+function getData($table,$year){
 	//获得$table数据
 	$conn = getConn();
-	if($area == '*'){
-		$query = "SELECT `$year` FROM $table";
-	}elseif($year == '*'){
-		$query = "SELECT * FROM $table WHERE area LIKE '%$area%'";
-	}else{
-		$query = "SELECT `$year` FROM $table WHERE area LIKE '%$area%'";
-	}
+	$query = "SELECT * FROM $table";
 	$result = mysqli_query($conn,$query);
+	$val = array();
 	if(mysqli_num_rows($result) > 0){
 		while($row = mysqli_fetch_assoc($result)){
-			return json_encode($row,JSON_UNESCAPED_UNICODE);
+			$arr['name']=$row['area'];
+			$arr['value']=$row[$year];
+			array_push($val, $arr);
 		}
+		return json_encode($val,JSON_UNESCAPED_UNICODE);
 	}else{
 		return '0 Data';
 	}
@@ -49,7 +46,7 @@ function getGeo(){
 	return json_encode($arr,JSON_UNESCAPED_UNICODE);
 }
 
-// getData($table,$area,$year);
+echo getData($table,$year);
 
 
 // JSON_FORCE_OBJECT 强行转为obj

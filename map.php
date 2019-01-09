@@ -24,7 +24,7 @@
 	var dom = echarts.init(dom);
 	var app = {};
 	option = null;
-	var data = <?php require_once 'json.php?t=gdp';?>;
+	// var data = <?php require_once 'json.php?t=gdp';?>;
 	
 </script>
 </html>

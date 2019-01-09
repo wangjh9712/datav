@@ -53,6 +53,7 @@ function getYearData($table,$area){
 			$arr[] = (float)$row[$i];
 		}
 	}
+	$arr = array_reverse($arr);
 	return json_encode($arr,JSON_UNESCAPED_UNICODE);
 }
 
@@ -65,6 +66,23 @@ function getFullYearData($table,$year){
 	if(mysqli_num_rows($result) > 0){
 		while($row = mysqli_fetch_row($result)){
 			$arr = (float)$row['0'];
+			array_push($val, $arr);
+		}
+		return json_encode($val,JSON_UNESCAPED_UNICODE);
+	}else{
+		return '0 Data';
+	}
+}
+
+function getCity(){
+	//获得$table数据对象 for mix-timeline
+	$conn = getConn();
+	$query = "SELECT * FROM gdp";
+	$result = mysqli_query($conn,$query);
+	$val = array();
+	if(mysqli_num_rows($result) > 0){
+		while($row = mysqli_fetch_row($result)){
+			$arr = $row['0'];
 			array_push($val, $arr);
 		}
 		return json_encode($val,JSON_UNESCAPED_UNICODE);

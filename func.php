@@ -4,8 +4,8 @@
 @$year = $_GET['y'];
 @$area = $_GET['a'];
 
-//获得数据库连接
 function getConn(){
+	//获得数据库连接
 	define('MYSQL_HOST','118.24.119.40');
 	define('MYSQL_DB','sjfx');
 	define('MYSQL_USER','sjfx');
@@ -15,8 +15,8 @@ function getConn(){
 	return $conn;
 };
 
-//获得$table数据
 function getData($table,$area,$year){
+	//获得$table数据
 	$conn = getConn();
 	if($area == '*'){
 		$query = "SELECT `$year` FROM $table";
@@ -28,14 +28,15 @@ function getData($table,$area,$year){
 	$result = mysqli_query($conn,$query);
 	if(mysqli_num_rows($result) > 0){
 		while($row = mysqli_fetch_assoc($result)){
-			echo json_encode($row);
+			return json_encode($row,JSON_UNESCAPED_UNICODE);
 		}
 	}else{
-		echo '0 Data';
+		return '0 Data';
 	}
 };
 
 function getGeo(){
+	//取得地图坐标JSON对象
 	$conn = getConn();
 	$query = "SELECT * FROM city_location";
 	$result = mysqli_query($conn,$query);
@@ -47,6 +48,10 @@ function getGeo(){
 	}
 	return json_encode($arr,JSON_UNESCAPED_UNICODE);
 }
+
+// getData($table,$area,$year);
+
+
 // JSON_FORCE_OBJECT 强行转为obj
 //city_location 城市坐标    
 //gdp GDP

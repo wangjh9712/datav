@@ -12,7 +12,7 @@ function getConn(){
 };
 
 function getData($table,$year){
-	//获得$table数据
+	//获得$table数据对象
 	$conn = getConn();
 	$query = "SELECT * FROM $table";
 	$result = mysqli_query($conn,$query);
@@ -43,6 +43,20 @@ function getGeo(){
 	return json_encode($arr,JSON_UNESCAPED_UNICODE);
 }
 
+function getYearData($table,$area){
+	//一个城市在$table中十年的数据数组
+	$conn = getConn();
+	$query = "SELECT * FROM $table WHERE area = '$area'";
+	$result = mysqli_query($conn,$query);
+	while($row = mysqli_fetch_row($result)){
+		for($i=1;$i<=10;$i++){
+			$arr[] = (float)$row[$i];
+		}
+	}
+	return json_encode($arr,JSON_UNESCAPED_UNICODE);
+}
+
+echo getYearData('gdp','北京');
 // JSON_FORCE_OBJECT 强行转为obj
 //city_location 城市坐标    
 //gdp GDP

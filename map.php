@@ -101,7 +101,7 @@
 		</div>
 		<div class="row">
 			<div class="col">
-				<iframe style="width: 900px; height: 600px;" src="bar.php?table=gdp&year=2017" frameborder="0" scrolling="auto" id="map" name="map"></iframe>
+				<iframe align="middle" scrolling=no style="width:1500px; height: 600px;" src="bar.php?table=gdp&year=2017" frameborder="0" scrolling="auto" id="map" name="map"></iframe>
 			</div>
 		</div>
 	</div>

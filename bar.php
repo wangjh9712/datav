@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html style="height: 100%;">
+<html>
    <head>
        <meta charset="utf-8">
    </head>
-   <body style="width: 900px; height: 600px;">
+   <body style="width: 1500px; height: 600px;">
 	   <?php
 	      $table=$_GET['table'];
 	      $year=$_GET['year'];

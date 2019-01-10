@@ -51,7 +51,7 @@ option = null;
 app.title = 'GDP';
 option = {
 	title: {
-		text: '城市常驻人口增长率'
+		text: '常驻人口增长率'
 	},
     tooltip: {
         trigger: 'axis',
@@ -84,99 +84,101 @@ option = {
                 }
             },
             data: ["2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017"]
-        },
-        {
-            type: 'category',
-            axisTick: {
-                alignWithLabel: true
-            },
-            axisLine: {
-                onZero: false,
-            },
-            axisPointer: {
-                label: {
-                    formatter: function (params) {
-                        return 'GDP  ' + params.value
-                            + (params.seriesData.length ? '：' + params.seriesData[0].data : '');
-                    }
-                }
-            },
         }
+        // ,
+        // {
+        //     type: 'category',
+        //     axisTick: {
+        //         alignWithLabel: true
+        //     },
+        //     axisLine: {
+        //         onZero: false,
+        //     },
+        //     axisPointer: {
+        //         label: {
+        //             formatter: function (params) {
+        //                 return '增长率  ' + params.value
+        //                     + (params.seriesData.length ? '：' + params.seriesData[0].data : '');
+        //             }
+        //         }
+        //     },
+        // }
     ],
     yAxis: [
         {
-            type: 'value'
+            type: 'value',
+            name: '%'
         }
     ],
     series: [
                     {
                         name:'上海',
                         type:'line',
-                        xAxisIndex: 1,
+                        // xAxisIndex: 1,
                         smooth: true,
-                        data: <?php require_once 'func.php'; echo getYearData('population','上海'); ?>
+                        data: <?php require_once 'func.php'; echo getRate('上海'); ?>
                     },
                     {
                         name:'北京',
                         type:'line',
                         smooth: true,
-                        data: <?php echo getYearData('population','北京'); ?>
+                        data: <?php echo getRate('北京'); ?>
 
                     },
-                            {
+                    {
                         name:'深圳',
                         type:'line',
                         smooth: true,
-                        data: <?php echo getYearData('population','深圳'); ?>
+                        data: <?php echo getRate('深圳'); ?>
 
                     },
-                            {
+                    {
                         name:'广州',
                         type:'line',
                         smooth: true,
-                        data: <?php echo getYearData('population','广州'); ?>
+                        data: <?php echo getRate('广州'); ?>
 
                     },
-                            {
+                    {
                         name:'重庆',
                         type:'line',
                         smooth: true,
-                        data: <?php echo getYearData('population','重庆'); ?>
+                        data: <?php echo getRate('重庆'); ?>
 
                     },
-                            {
+                    {
                         name:'天津',
                         type:'line',
                         smooth: true,
-                        data: <?php echo getYearData('population','天津'); ?>
+                        data: <?php echo getRate('天津'); ?>
 
                     },
-                            {
+                    {
                         name:'成都',
                         type:'line',
                         smooth: true,
-                        data: <?php echo getYearData('population','成都'); ?>
+                        data: <?php echo getRate('成都'); ?>
 
                     },
-                           {
+                    {
                         name:'武汉',
                         type:'line',
                         smooth: true,
-                        data: <?php echo getYearData('population','武汉'); ?>
+                        data: <?php echo getRate('武汉'); ?>
 
                     },
                     {
                         name:'杭州',
                         type:'line',
                         smooth: true,
-                        data: <?php echo getYearData('population','杭州'); ?>
+                        data: <?php echo getRate('杭州'); ?>
 
                     },
                     {
                         name:'南京',
                         type:'line',
                         smooth: true,
-                        data: <?php echo getYearData('population','南京'); ?>
+                        data: <?php echo getRate('南京'); ?>
 
                     }
                 ]

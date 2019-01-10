@@ -1,12 +1,11 @@
 <?php
-
 function getConn(){
 	//获得数据库连接
-	define('MYSQL_HOST','118.24.119.40');
-	define('MYSQL_DB','sjfx');
-	define('MYSQL_USER','sjfx');
-	define('MYSQL_PW','LnWSD4wFPHTp2S7Z');
-	$conn = mysqli_connect(MYSQL_HOST,MYSQL_USER,MYSQL_PW,MYSQL_DB) or die ("Can't Reach The Database!");
+	$host = '118.24.119.40';
+	$dbname = 'sjfx';
+	$dbuser = 'sjfx';
+	$password = 'LnWSD4wFPHTp2S7Z';
+	$conn = mysqli_connect($host,$dbuser,$password,$dbname) or die ("Can't Reach The Database!");
 	mysqli_query($conn,"set names utf8");
 	return $conn;
 };
@@ -75,7 +74,7 @@ function getFullYearData($table,$year){
 }
 
 function getCity(){
-	//获得$table数据对象 for mix-timeline
+	//获得城市列表
 	$conn = getConn();
 	$query = "SELECT * FROM gdp";
 	$result = mysqli_query($conn,$query);
@@ -91,6 +90,29 @@ function getCity(){
 	}
 }
 
+<<<<<<< HEAD
+// $arr = json_decode(getFullYearData('pri_industry','2008'));
+// $sum = array_sum(json_decode(getFullYearData('pri_industry','2008')));
+// array_push($arr, $sum);
+// print_r (json_encode($arr,JSON_UNESCAPED_UNICODE));
+=======
+function getRate($area){
+	//2009-2017 常驻人口增长率
+	$conn = getConn();
+	$query = "SELECT * FROM population WHERE area = '$area'";
+	$result = mysqli_query($conn,$query);
+	while($row = mysqli_fetch_row($result)){
+		for($i=1;$i<10;$i++){
+			$a = (float)$row[$i];
+			$b = (float)$row[$i+1];
+			$r = -(1 -($a / $b))*100;
+			$arr[] = $r;
+		}
+	}
+	$arr = array_reverse($arr);
+	return json_encode($arr,JSON_UNESCAPED_UNICODE);
+}
+>>>>>>> 4c71727c1d375bd4d25cb64dcbd7ea2991062a67
 // JSON_FORCE_OBJECT 强行转为obj
 //city_location 城市坐标    
 //gdp GDP

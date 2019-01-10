@@ -20,8 +20,7 @@
 			</div>
 		</div>
 		<div class="row" style="margin: 10px;">
-			<div class="col-md-4"></div>
-			<div class="col-md-8">
+			<div class="col text-center">
 				<div class="btn-group">
 					<button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="margin-right: 10px;">GDP</button>
 					<div class='dropdown-menu'>

@@ -58,7 +58,7 @@ option = {
         {
             name:'房价',
             type:'bar',
-            data:<?php echo getFullYearData("house_price","$year");?>,
+            data:<?php echo getFullYearData("house_price",$year);?>,
             markPoint : {
                 data : [
                     {type : 'max', name: '房价最高'},
@@ -74,7 +74,7 @@ option = {
         {
             name:'工资',
             type:'bar',
-            data:<?php echo getFullYearData("pay","$year");?>,
+            data:<?php echo getFullYearData("pay",$year);?>,
             markPoint : {
                 data : [
                     {type:'max', name: '工资最高'},

@@ -23,7 +23,7 @@
 		var myChart1 = echarts.init(dom1);
 		var app1 = {};
 		option1 = null;
-		var data1 = <?php require("func.php"); echo getData('$table','$year');?>;
+		var data1 = <?php require("func.php"); echo getData("$table","$year");?>;
 		var geoCoordMap = <?php echo getGeo();?>;
 
 

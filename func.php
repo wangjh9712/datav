@@ -1,5 +1,4 @@
 <?php
-
 function getConn(){
 	//获得数据库连接
 	$host = '118.24.119.40';
@@ -107,6 +106,7 @@ function getRate($area){
 	$arr = array_reverse($arr);
 	return json_encode($arr,JSON_UNESCAPED_UNICODE);
 }
+
 // JSON_FORCE_OBJECT 强行转为obj
 //city_location 城市坐标    
 //gdp GDP

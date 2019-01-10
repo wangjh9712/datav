@@ -22,6 +22,13 @@
 			</div>
 		</div>
 		<div class="row">
+			<div class="col">
+				<p class="lead">
+					GDP
+				</p>
+			</div>
+		</div>
+		<div class="row">
 			<div class="col" style="margin: 0px;">
 				<div id="ContainerBar" style="height:600px; margin: 0"></div>
 				<?php require_once 'func.php' ?>

@@ -5,7 +5,7 @@ function getConn(){
 	$user = 'sjfx';
 	$password = 'sjfx';
 	$dbname = 'LnWSD4wFPHTp2S7Z';
-	$conn = mysqli_connect(MYSQL_HOST,MYSQL_USER,MYSQL_PW,MYSQL_DB) or die ("Can't Reach The Database!");
+	$conn = mysqli_connect($host,$user,$password,$dbname) or die ("Can't Reach The Database!");
 	mysqli_query($conn,"set names utf8");
 	return $conn;
 };

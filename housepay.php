@@ -22,11 +22,21 @@
 				<h1 class="display-4">人均工资与房价</h1>
 			</div>
 		</div>
+		<div class="row" style="margin: 10px;">
+			<div class="col text-center">
+				<div class="btn-group" role="group" aria-label="Basic example">
+					<?php
+					for($year=2017;$year>2007;$year--){
+						echo "
+						<a href=\"housepay?year=$year\" style=\"margin-right: 10px;\"><button type=\"button\" class=\"btn btn-secondary\">$year</button></a>";
+					}
+					?>
+				</div>
+			</div>
+		</div>
 		<div class="row" style="height:600px; margin: 0">
 			<div class="col" style="margin: 0px;">
-				 <?php 
-					$year=$_GET['year'];
-				 ?>
+				 <?php	$year=$_GET['year']; ?>
        <div id="container" style="height: 100%"></div>
        <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
 <!--

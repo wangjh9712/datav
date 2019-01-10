@@ -8,11 +8,10 @@
   <link rel="stylesheet" type="text/css" href="/css/open-iconic-bootstrap.min.css">
   <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdn.bootcss.com/twitter-bootstrap/4.2.1/js/bootstrap.bundle.min.js"></script>
-  
-
-</head>
+  </style>
+  </head>
 <body>
-	<?php require_once '../component/header.php' ?>
+	<?php require_once '/component/header.php' ?>
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col text-center jumbotron" style="margin: 0px;">
@@ -102,7 +101,7 @@
 		</div>
 		<div class="row">
 			<div class="col">
-				<iframe src="bar.php?t=gdp&year=2017" frameborder="0" scrolling="auto" id="map" name="map" style="height: 900px;"></iframe>
+				<iframe style="width: 900px; height: 600px;" src="bar.php?table=gdp&year=2017" frameborder="0" scrolling="auto" id="map" name="map"></iframe>
 			</div>
 		</div>
 	</div>

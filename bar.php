@@ -3,7 +3,7 @@
    <head>
        <meta charset="utf-8">
    </head>
-   <body style="height: 100%; margin: 0">
+   <body style="width: 900px; height: 600px;">
 	   <?php
 	      $table=$_GET['table'];
 	      $year=$_GET['year'];

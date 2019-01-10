@@ -105,6 +105,6 @@
 			</div>
 		</div>
 	</div>
-	<?php require_once '../component/footer.php' ?>
+	<?php require_once '/component/footer.php' ?>
 </body>
 </html>

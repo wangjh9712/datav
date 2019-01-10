@@ -18,7 +18,7 @@
         <a class="nav-link" href="/gdp.php">GDP</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/housepay.php">房价</a>
+        <a class="nav-link" href="/housepay.php?year=2017">房价</a>
       </li>
     </ul>
     <span class="navbar-text">

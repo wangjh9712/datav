@@ -90,12 +90,6 @@ function getCity(){
 	}
 }
 
-<<<<<<< HEAD
-// $arr = json_decode(getFullYearData('pri_industry','2008'));
-// $sum = array_sum(json_decode(getFullYearData('pri_industry','2008')));
-// array_push($arr, $sum);
-// print_r (json_encode($arr,JSON_UNESCAPED_UNICODE));
-=======
 function getRate($area){
 	//2009-2017 常驻人口增长率
 	$conn = getConn();
@@ -112,7 +106,7 @@ function getRate($area){
 	$arr = array_reverse($arr);
 	return json_encode($arr,JSON_UNESCAPED_UNICODE);
 }
->>>>>>> 4c71727c1d375bd4d25cb64dcbd7ea2991062a67
+
 // JSON_FORCE_OBJECT 强行转为obj
 //city_location 城市坐标    
 //gdp GDP

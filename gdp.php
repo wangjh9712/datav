@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<title>GDP与三大产业</title>
+<title>全国主要城市数据展现 | GDP与三大产业</title>
 <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="/css/open-iconic-bootstrap.min.css">
 <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
@@ -18,7 +18,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col" style="margin: 0px;">
-				GDP与三大产业	
+				<h1 class="display-4">GDP与三大产业</h1>	
 			</div>
 		</div>
 		<div class="row">

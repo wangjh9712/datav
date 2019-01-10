@@ -3,8 +3,8 @@ function getConn(){
 	//获得数据库连接
 	$host = '118.24.119.40';
 	$user = 'sjfx';
-	$password = 'sjfx';
-	$dbname = 'LnWSD4wFPHTp2S7Z';
+	$dbname = 'sjfx';
+	$password = 'LnWSD4wFPHTp2S7Z';
 	$conn = mysqli_connect($host,$user,$password,$dbname) or die ("Can't Reach The Database!");
 	mysqli_query($conn,"set names utf8");
 	return $conn;

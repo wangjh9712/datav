@@ -45,149 +45,120 @@
 			<div class="twelve column" id="container" style="height: 600%;"></div>
 		    <script type="text/javascript">
 		    var dom = document.getElementById("container");
-var myChart = echarts.init(dom);
-var app = {};
-option = null;
-app.title = 'GDP';
-option = {
-	title: {
-		text: '常驻人口增长率'
-	},
-    tooltip: {
-        trigger: 'axis',
-        axisPointer: {
-            type: 'cross'
-        }
-    },
-    legend: {
-        data:['上海','北京','深圳','广州','重庆','天津','成都','武汉','杭州','南京']
-    },
-    grid: {
-        top: 70,
-        bottom: 50
-    },
-    xAxis: [
-        {
-            type: 'category',
-            axisTick: {
-                alignWithLabel: true
-            },
-            axisLine: {
-                onZero: false,
-            },
-            axisPointer: {
-                label: {
-                    formatter: function (params) {
-                        return '增长率  ' + params.value
-                            + (params.seriesData.length ? '：' + params.seriesData[0].data : '');
-                    }
-                }
-            },
-            data: ["2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017"]
-        }
-        // ,
-        // {
-        //     type: 'category',
-        //     axisTick: {
-        //         alignWithLabel: true
-        //     },
-        //     axisLine: {
-        //         onZero: false,
-        //     },
-        //     axisPointer: {
-        //         label: {
-        //             formatter: function (params) {
-        //                 return '增长率  ' + params.value
-        //                     + (params.seriesData.length ? '：' + params.seriesData[0].data : '');
-        //             }
-        //         }
-        //     },
-        // }
-    ],
-    yAxis: [
-        {
-            type: 'value',
-            name: '%'
-        }
-    ],
-    series: [
-                    {
-                        name:'上海',
-                        type:'line',
-                        // xAxisIndex: 1,
-                        smooth: true,
-                        data: <?php require_once 'func.php'; echo getRate('上海'); ?>
-                    },
-                    {
-                        name:'北京',
-                        type:'line',
-                        smooth: true,
-                        data: <?php echo getRate('北京'); ?>
-
-                    },
-                    {
-                        name:'深圳',
-                        type:'line',
-                        smooth: true,
-                        data: <?php echo getRate('深圳'); ?>
-
-                    },
-                    {
-                        name:'广州',
-                        type:'line',
-                        smooth: true,
-                        data: <?php echo getRate('广州'); ?>
-
-                    },
-                    {
-                        name:'重庆',
-                        type:'line',
-                        smooth: true,
-                        data: <?php echo getRate('重庆'); ?>
-
-                    },
-                    {
-                        name:'天津',
-                        type:'line',
-                        smooth: true,
-                        data: <?php echo getRate('天津'); ?>
-
-                    },
-                    {
-                        name:'成都',
-                        type:'line',
-                        smooth: true,
-                        data: <?php echo getRate('成都'); ?>
-
-                    },
-                    {
-                        name:'武汉',
-                        type:'line',
-                        smooth: true,
-                        data: <?php echo getRate('武汉'); ?>
-
-                    },
-                    {
-                        name:'杭州',
-                        type:'line',
-                        smooth: true,
-                        data: <?php echo getRate('杭州'); ?>
-
-                    },
-                    {
-                        name:'南京',
-                        type:'line',
-                        smooth: true,
-                        data: <?php echo getRate('南京'); ?>
-
-                    }
-                ]
-};
-;
-
-if (option && typeof option === "object") {
-    myChart.setOption(option, true);
-}
+				var myChart = echarts.init(dom);
+				var app = {};
+				option = null;
+				app.title = '增长率';
+				option = {
+					title: {
+						text: '常驻人口增长率'
+					},
+				    tooltip: {
+				        trigger: 'axis',
+				        axisPointer: {
+				            type: 'cross'
+				        }
+				    },
+				    legend: {
+				        data:['上海','北京','深圳','广州','重庆','天津','成都','武汉','杭州','南京']
+				    },
+				    grid: {
+				        top: 70,
+				        bottom: 50
+				    },
+				    xAxis: [
+				        {
+				            type: 'category',
+				            axisTick: {
+				                alignWithLabel: true
+				            },
+				            axisLine: {
+				                onZero: false,
+				            },
+				            axisPointer: {
+				                label: {
+				                    formatter: function (params) {
+				                        return '增长率  ' + params.value
+				                            + (params.seriesData.length ? '：' + params.seriesData[0].data : '');
+				                    }
+				                }
+				            },
+				            data: ["2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017"]
+				        }
+				    ],
+				    yAxis: [
+				        {
+				            type: 'value',
+				            name: '%'
+				        }
+				    ],
+				    series: [
+			                    {
+			                        name:'上海',
+			                        type:'line',
+			                        smooth: true,
+			                        data: <?php require_once 'func.php'; echo getRate('上海'); ?>
+			                    },
+			                    {
+			                        name:'北京',
+			                        type:'line',
+			                        smooth: true,
+			                        data: <?php echo getRate('北京'); ?>
+			                    },
+			                            {
+			                        name:'深圳',
+			                        type:'line',
+			                        smooth: true,
+			                        data: <?php echo getRate('深圳'); ?>
+			                    },
+			                            {
+			                        name:'广州',
+			                        type:'line',
+			                        smooth: true,
+			                        data: <?php echo getRate('广州'); ?>
+			                    },
+			                            {
+			                        name:'重庆',
+			                        type:'line',
+			                        smooth: true,
+			                        data: <?php echo getRate('重庆'); ?>
+			                    },
+			                            {
+			                        name:'天津',
+			                        type:'line',
+			                        smooth: true,
+			                        data: <?php echo getRate('天津'); ?>
+			                    },
+			                            {
+			                        name:'成都',
+			                        type:'line',
+			                        smooth: true,
+			                        data: <?php echo getRate('成都'); ?>
+			                    },
+			                    {
+			                        name:'武汉',
+			                        type:'line',
+			                        smooth: true,
+			                        data: <?php echo getRate('武汉'); ?>
+			                    },
+			                    {
+			                        name:'杭州',
+			                        type:'line',
+			                        smooth: true,
+			                        data: <?php echo getRate('杭州'); ?>
+			                    },
+			                    {
+			                        name:'南京',
+			                        type:'line',
+			                        smooth: true,
+			                        data: <?php echo getRate('南京'); ?>
+			                    }
+				            ]
+				};
+				;
+				if (option && typeof option === "object") {
+				    myChart.setOption(option, true);
+				}
 		    </script>
 		</div>
 		<div class="row">
@@ -247,7 +218,6 @@ if (option && typeof option === "object") {
 					    }
 					    return obj;
 					}
-
 					dataMap.dataGDP = dataFormatter({
 					    //max : 60000,
 					    2008:<?php echo getFullYearData('gdp','2008'); ?>,
@@ -261,7 +231,6 @@ if (option && typeof option === "object") {
 					    2016:<?php echo getFullYearData('gdp','2016'); ?>,
 					    2017:<?php echo getFullYearData('gdp','2017'); ?>
 					});
-
 					dataMap.dataPI = dataFormatter({
 					    //max : 4000,
 					    2008:<?php echo getFullYearData('pri_industry','2008'); ?>,
@@ -275,7 +244,6 @@ if (option && typeof option === "object") {
 					    2016:<?php echo getFullYearData('pri_industry','2016'); ?>,
 					    2017:<?php echo getFullYearData('pri_industry','2017'); ?>
 					});
-
 					dataMap.dataSI = dataFormatter({
 					    //max : 26600,
 					    2008:<?php echo getFullYearData('sec_industry','2008'); ?>,
@@ -289,7 +257,6 @@ if (option && typeof option === "object") {
 					    2016:<?php echo getFullYearData('sec_industry','2016'); ?>,
 					    2017:<?php echo getFullYearData('sec_industry','2017'); ?>
 					});
-
 					dataMap.dataTI = dataFormatter({
 					    //max : 25000,
 					    2008:<?php echo getFullYearData('ter_industry','2008'); ?>,
@@ -303,7 +270,6 @@ if (option && typeof option === "object") {
 					    2016:<?php echo getFullYearData('ter_industry','2016'); ?>,
 					    2017:<?php echo getFullYearData('ter_industry','2017'); ?>
 					});
-
 					// dataMap.dataEstate = dataFormatter({
 					//     //max : 3600,
 					//     2008:<?php echo getFullYearData('pay','2008'); ?>,
@@ -317,7 +283,6 @@ if (option && typeof option === "object") {
 					//     2016:<?php echo getFullYearData('pay','2016'); ?>,
 					//     2017:<?php echo getFullYearData('pay','2017'); ?>
 					// });
-
 					// dataMap.dataFinancial = dataFormatter({
 					//     //max : 3200,
 					//     2008:<?php echo getFullYearData('house_price','2008'); ?>,
@@ -331,7 +296,6 @@ if (option && typeof option === "object") {
 					//     2016:<?php echo getFullYearData('house_price','2016'); ?>,
 					//     2017:<?php echo getFullYearData('house_price','2017'); ?>
 					// });
-
 					option = {
 					    baseOption: {
 					        timeline: {

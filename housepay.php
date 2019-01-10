@@ -22,6 +22,13 @@
 				<h1 class="display-4">人均工资与房价</h1>
 			</div>
 		</div>
+		<div class="row">
+			<div class="col">
+				<p class="lead">
+					GDP
+				</p>
+			</div>
+		</div>
 		<div class="row" style="margin: 10px;">
 			<div class="col text-center">
 				<div class="btn-group" role="group" aria-label="Basic example">

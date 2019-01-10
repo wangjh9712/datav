@@ -15,16 +15,18 @@
 
 <body>
 	<?php require_once '/component/header.php' ?>
-	<div class="container">
+	<div class="container-fluid">
 		<div class="row">
-			<div class="col" style="margin: 0px;">
-				<h1 class="display-4">GDP与三大产业</h1>	
+			<div class="col text-center jumbotron" style="margin: 0px;">
+				<h1 class="display-4">GDP与三大产业</h1>
 			</div>
 		</div>
+	</div>
+	<div class="container">
 		<div class="row">
 			<div class="col">
 				<p class="lead">
-					GDP
+					采用时间轴的方式，动态的展示了全国主要36个城市的GDP、第一产业、第二产业和第三产业十年来的数据发展趋势
 				</p>
 			</div>
 		</div>

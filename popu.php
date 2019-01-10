@@ -15,16 +15,18 @@
 
 <body>
 	<?php require_once '/component/header.php' ?>
-	<div class="container">
+	<div class="container-fluid">
 		<div class="row">
-			<div class="col" style="margin: 0px;">
-				<h1 class="display-4">户籍人口增长率</h1>	
+			<div class="col text-center jumbotron" style="margin: 0px;">
+				<h1 class="display-4">户籍人口增长率</h1>
 			</div>
 		</div>
+	</div>
+	<div class="container">
 		<div class="row">
 			<div class="col">
 				<p class="lead">
-					GDP
+					采用折线图展示了36个城市中2017年GDP总数排名前十城市十年来的人口增长率变化
 				</p>
 			</div>
 		</div>

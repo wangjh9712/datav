@@ -3,7 +3,7 @@
    <head>
        <meta charset="utf-8">
    </head>
-   <body style="width: 1500px; height: 600px;">
+   <body style="width: 1860px; height: 800px;">
 	   <?php
 	      $table=$_GET['table'];
 	      $year=$_GET['year'];
@@ -237,17 +237,14 @@
 				option = {
 					color: ['purple'],
 					title: {
-						text: '中国主要城市',
-						subtext: '数据来自国家统计局'
+						text: '',
+						subtext: ''
 					},
 					tooltip: {
 						trigger: 'axis',
 						axisPointer: {
 							type: 'shadow'
 						}
-					},
-					legend: {
-						<?php echo "data: [$year年]" ?>
 					},
 					grid: {
 						left: '15%',
@@ -265,7 +262,7 @@
 					},
 					series: [
 						{
-							<?php echo "name: [$year年]" ?>,
+							<?php echo "name:  ['".$year."年']"?>,
 							zlevel: 1,
 							type: 'bar',
 							data: <?php echo getFullYearData("$table","$year");?>

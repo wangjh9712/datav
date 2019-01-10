@@ -16,16 +16,18 @@
 
 <body>
 	<?php require_once '/component/header.php' ?>
-	<div class="container">
+	<div class="container-fluid">
 		<div class="row">
-			<div class="col" style="margin: 0px;">
+			<div class="col text-center jumbotron" style="margin: 0px;">
 				<h1 class="display-4">人均工资与房价</h1>
 			</div>
 		</div>
+	</div>
+	<div class="container">
 		<div class="row">
 			<div class="col">
 				<p class="lead">
-					GDP
+					使用柱状图和折线图两种类型相结合的方式,展示了全国主要36个城市的房价和工资的详细数据以及之间的关系
 				</p>
 			</div>
 		</div>
@@ -63,14 +65,15 @@
 			option = null;
 			option = {
 				title : {
-					text: '中国主要城市房价（元/平方米）和工资（元/年）',
+					text: '中国主要城市房价（元/平方米）和工资（元/月）',
 					subtext: '来源国家统计局'
 				},
 				tooltip : {
 					trigger: 'axis'
 				},
 				legend: {
-					data:['GDP','人口']
+					x: "center",
+					data:['房价','工资']
 				},
 				toolbox: {
 					show : true,

@@ -6,19 +6,19 @@
   <div class="collapse navbar-collapse" id="navbarText">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="index.php">主页</a>
+        <a class="nav-link" href="/index.php">主页</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="map.php">地图</a>
+        <a class="nav-link" href="/content/map.php">地图</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="popu.php">人口</a>
+        <a class="nav-link" href="/content/popu.php">人口</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="gdp.php">GDP</a>
+        <a class="nav-link" href="/content/gdp.php">GDP</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="housepay.php">房价</a>
+        <a class="nav-link" href="/content/housepay.php">房价</a>
       </li>
     </ul>
     <span class="navbar-text">

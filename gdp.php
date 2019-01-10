@@ -1,226 +1,30 @@
 <!DOCTYPE html>
-<html>
+<html style="overflow-x: hidden;">
 <head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<title>用Skeleton写文章</title>
-<meta name="description" content="">
-<meta name="keywords" content="">
-<link href="css/skeleton.css" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>GDP与三大产业</title>
+<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="/css/open-iconic-bootstrap.min.css">
+<script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <script type="text/javascript" src="js/echarts.js"></script>
 <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
-<style type="text/css">
-	p{ text-indent:2em;}
-</style>
 </head>
 <body>
+</head>
+
+<body>
+	<?php require_once '/component/header.php' ?>
 	<div class="container">
 		<div class="row">
-			<div class="twelve column">
-				<h2 style="text-align: center">我是大标题</h2>
+			<div class="col" style="margin: 0px;">
+				GDP与三大产业	
 			</div>
 		</div>
 		<div class="row">
-			<div class="twelve column">
-				<p>
-					我是文章的开头部分，文章开头部分很重要，俗话说好的开头……emmmmm什么就成功了一半啥的，就足以说明文章开头部分的重要性了。但是我现在这个开头好像有点短了啊，我应该怎么加点内容呢，欸，要不就这样吧，行那就先这样吧。
-				</p>
-			</div>
-		</div>
-		<div class="row">
-			<div class="twelve column">
-				<h4>1.我是小标题</h4>
-				<p>
-					常见的文章是不是都是总分总的结构，我先构思一下文章的结构，其实也没什么好构思的，因为我其实只会这一种，还是Old Li教会我的（忽然好想他，欸，我是想他呢还是想高中的生活，我是想高中的生活呢还是沉浸在自己的回忆里？），所以就这么写吧。
-				</p>
-				<p>
-					其实也没什么好写的，我踏马在干嘛啊，我怎么开始写这些废话了啊啊啊啊啊啊啊，我为什么不好写一些关于报告的东西啊啊啊啊啊。难受难受，浪费了这么多时间写这些废话，找十七！你的良心不会痛吗！！！
-				</p>
-				<p>
-					下面这个div就放一个表吧，这样排版好不好啊啊啊啊啊,不好，一点都不好。
-				</p>
-			</div>
-		</div>
-		<div class="row">
-			<div class="twelve column" id="container" style="height: 600%;"></div>
-		    <script type="text/javascript">
-		    var dom = document.getElementById("container");
-var myChart = echarts.init(dom);
-var app = {};
-option = null;
-app.title = 'GDP';
-option = {
-	title: {
-		text: '常驻人口增长率'
-	},
-    tooltip: {
-        trigger: 'axis',
-        axisPointer: {
-            type: 'cross'
-        }
-    },
-    legend: {
-        data:['上海','北京','深圳','广州','重庆','天津','成都','武汉','杭州','南京']
-    },
-    grid: {
-        top: 70,
-        bottom: 50
-    },
-    xAxis: [
-        {
-            type: 'category',
-            axisTick: {
-                alignWithLabel: true
-            },
-            axisLine: {
-                onZero: false,
-            },
-            axisPointer: {
-                label: {
-                    formatter: function (params) {
-                        return '增长率  ' + params.value
-                            + (params.seriesData.length ? '：' + params.seriesData[0].data : '');
-                    }
-                }
-            },
-            data: ["2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017"]
-        }
-        // ,
-        // {
-        //     type: 'category',
-        //     axisTick: {
-        //         alignWithLabel: true
-        //     },
-        //     axisLine: {
-        //         onZero: false,
-        //     },
-        //     axisPointer: {
-        //         label: {
-        //             formatter: function (params) {
-        //                 return '增长率  ' + params.value
-        //                     + (params.seriesData.length ? '：' + params.seriesData[0].data : '');
-        //             }
-        //         }
-        //     },
-        // }
-    ],
-    yAxis: [
-        {
-            type: 'value',
-            name: '%'
-        }
-    ],
-    series: [
-                    {
-                        name:'上海',
-                        type:'line',
-                        // xAxisIndex: 1,
-                        smooth: true,
-                        data: <?php require_once 'func.php'; echo getRate('上海'); ?>
-                    },
-                    {
-                        name:'北京',
-                        type:'line',
-                        smooth: true,
-                        data: <?php echo getRate('北京'); ?>
-
-                    },
-                    {
-                        name:'深圳',
-                        type:'line',
-                        smooth: true,
-                        data: <?php echo getRate('深圳'); ?>
-
-                    },
-                    {
-                        name:'广州',
-                        type:'line',
-                        smooth: true,
-                        data: <?php echo getRate('广州'); ?>
-
-                    },
-                    {
-                        name:'重庆',
-                        type:'line',
-                        smooth: true,
-                        data: <?php echo getRate('重庆'); ?>
-
-                    },
-                    {
-                        name:'天津',
-                        type:'line',
-                        smooth: true,
-                        data: <?php echo getRate('天津'); ?>
-
-                    },
-                    {
-                        name:'成都',
-                        type:'line',
-                        smooth: true,
-                        data: <?php echo getRate('成都'); ?>
-
-                    },
-                    {
-                        name:'武汉',
-                        type:'line',
-                        smooth: true,
-                        data: <?php echo getRate('武汉'); ?>
-
-                    },
-                    {
-                        name:'杭州',
-                        type:'line',
-                        smooth: true,
-                        data: <?php echo getRate('杭州'); ?>
-
-                    },
-                    {
-                        name:'南京',
-                        type:'line',
-                        smooth: true,
-                        data: <?php echo getRate('南京'); ?>
-
-                    }
-                ]
-};
-;
-
-if (option && typeof option === "object") {
-    myChart.setOption(option, true);
-}
-		    </script>
-		</div>
-		<div class="row">
-			<div class="twelve column">
-				<p>
-					不知道上边放个图感觉怎么样，我还是赶紧弄完这个样式吧，先不在这里废话了啊啊啊啊啊我来凑字数吧我来凑字数吧我来凑字数吧。我来凑字数吧我来凑字数吧我来凑字数吧我来凑字数吧我来凑字数吧我来凑字数吧我来凑字数吧我来凑字数吧我来凑字数吧我来凑字数吧，我来凑字数吧我来凑字数吧我来凑字数吧我来凑字数吧我来凑字数吧我来凑字数吧我来凑字数吧我来凑字数吧。
-				</p>
-				<p>
-					我来凑字数吧我来凑字数吧我来凑字数吧我来凑字数吧,我来凑字数吧我来凑字数吧我来凑字数吧我来凑字数吧我来凑字数吧.我来凑字数吧我来凑字数吧我来凑字数吧,我来凑字数吧我来凑字数吧我来凑字数吧.我来凑字数吧我来凑字数吧我来凑字数吧,我来凑字数吧我来凑字数吧,我来凑字数吧我来凑字数吧.
-				</p>
-			</div>
-		</div>
-		<div class="row">
-			<div class="twelve column">
-				<h4>2.我是第二个小标题</h4>
-			</div>
-		</div>
-		<div class="row">
-			<div class="twelve column">
-				<p>
-					我是凑字数的，我来凑字数，大家先看一看效果我来凑字数吧我来凑字数吧。我来凑字数吧我来凑字数吧我来凑字数吧，我来凑字数吧我来凑字数吧我来凑字数吧我来凑字数吧，我来凑字数吧我来凑字数吧。我来凑字数吧我来凑字数吧我来凑字数吧我来凑字数吧，我来凑字数吧我来凑字数吧，我来凑字数吧我来凑字数吧，我来凑字数吧我来凑字数吧我来凑字数吧我来凑字数吧，我来凑字数吧我来凑字数吧我来凑字数吧。
-				</p>
-				<p>
-					我是凑字数的，我来凑字数，大家先看一看效果我来凑字数吧我来凑字数吧。我来凑字数吧我来凑字数吧我来凑字数吧，我来凑字数吧我来凑字数吧我来凑字数吧我来凑字数吧，我来凑字数吧我来凑字数吧。我来凑字数吧我来凑字数吧我来凑字数吧我来凑字数吧，我来凑字数吧我来凑字数吧，我来凑字数吧我来凑字数吧，我来凑字数吧我来凑字数吧我来凑字数吧我来凑字数吧，我来凑字数吧我来凑字数吧我来凑字数吧。
-				</p>
-				<p>
-					下面又是一个表格啦啦啦啦啦啦啦。
-				</p>
-			</div>
-		</div>
-		<div class="row">
-			<div class="twelve column">
-				<div id="ContainerBar" style="height: 600%"></div>
+			<div class="col" style="margin: 0px;">
+				<div id="ContainerBar" style="height:600px; margin: 0"></div>
+				<?php require_once 'func.php' ?>
 				<script type="text/javascript">
 					var DomBar = document.getElementById("ContainerBar");
 					var myChartBar = echarts.init(DomBar);
@@ -247,7 +51,6 @@ if (option && typeof option === "object") {
 					    }
 					    return obj;
 					}
-
 					dataMap.dataGDP = dataFormatter({
 					    //max : 60000,
 					    2008:<?php echo getFullYearData('gdp','2008'); ?>,
@@ -261,7 +64,6 @@ if (option && typeof option === "object") {
 					    2016:<?php echo getFullYearData('gdp','2016'); ?>,
 					    2017:<?php echo getFullYearData('gdp','2017'); ?>
 					});
-
 					dataMap.dataPI = dataFormatter({
 					    //max : 4000,
 					    2008:<?php echo getFullYearData('pri_industry','2008'); ?>,
@@ -275,7 +77,6 @@ if (option && typeof option === "object") {
 					    2016:<?php echo getFullYearData('pri_industry','2016'); ?>,
 					    2017:<?php echo getFullYearData('pri_industry','2017'); ?>
 					});
-
 					dataMap.dataSI = dataFormatter({
 					    //max : 26600,
 					    2008:<?php echo getFullYearData('sec_industry','2008'); ?>,
@@ -289,7 +90,6 @@ if (option && typeof option === "object") {
 					    2016:<?php echo getFullYearData('sec_industry','2016'); ?>,
 					    2017:<?php echo getFullYearData('sec_industry','2017'); ?>
 					});
-
 					dataMap.dataTI = dataFormatter({
 					    //max : 25000,
 					    2008:<?php echo getFullYearData('ter_industry','2008'); ?>,
@@ -303,7 +103,6 @@ if (option && typeof option === "object") {
 					    2016:<?php echo getFullYearData('ter_industry','2016'); ?>,
 					    2017:<?php echo getFullYearData('ter_industry','2017'); ?>
 					});
-
 					// dataMap.dataEstate = dataFormatter({
 					//     //max : 3600,
 					//     2008:<?php echo getFullYearData('pay','2008'); ?>,
@@ -317,7 +116,6 @@ if (option && typeof option === "object") {
 					//     2016:<?php echo getFullYearData('pay','2016'); ?>,
 					//     2017:<?php echo getFullYearData('pay','2017'); ?>
 					// });
-
 					// dataMap.dataFinancial = dataFormatter({
 					//     //max : 3200,
 					//     2008:<?php echo getFullYearData('house_price','2008'); ?>,
@@ -331,7 +129,6 @@ if (option && typeof option === "object") {
 					//     2016:<?php echo getFullYearData('house_price','2016'); ?>,
 					//     2017:<?php echo getFullYearData('house_price','2017'); ?>
 					// });
-
 					option = {
 					    baseOption: {
 					        timeline: {
@@ -536,39 +333,16 @@ if (option && typeof option === "object") {
 					    myChartBar.setOption(option, true);
 					}
 				</script>
+				
+			      </div>	
 			</div>
-		</div>
 		<div class="row">
-			<div class="twelve column">
-				<p>
-					hhhhhhhhhh,终于完成啦。凑字数凑字数凑字数凑字数凑字数凑字数，凑字数凑字数，凑字数凑字数，，，，，凑字数凑字数凑字数凑字数凑字数，，，凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数。
-				</p>
-				<p>
-					凑段落啦啦啦啦啦啦啦啦啦啦啦啦啦啦，哈哈哈哈哈哈哈哈6666666.
-				</p>
+			<div class="col">
+				描述
 			</div>
 		</div>
-		<div class="row">
-			<div class="twelve column">
-				<h4>3.我是小标题</h4>
-				<p>
-					下面就是哈哈哈哈哈哈哈哈接着凑字数吧，啦啦啦啦啦啦啦啦啦啦啦啦哈哈哈哈哈哈哈哈哈，好了没啦啦啦啦啦啦啦啦。
-				</p>
-				<p>
-					hhhhhhhhhh,终于完成啦。凑字数凑字数凑字数凑字数凑字数凑字数，凑字数凑字数，凑字数凑字数，，，，，凑字数凑字数凑字数凑字数凑字数，，，凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数。
-				</p>
-				<p>
-					凑段落啦啦啦啦啦啦啦啦啦啦啦啦啦啦，哈哈哈哈哈哈哈哈6666666.
-				</p>
-			</div>
 		</div>
-		<div class="row">
-			<div class="twelve column">
-				<p>
-					我是文章的结尾部分，文章结尾部分也很重要，俗话说好的结尾……emmmmm什么就成功了一半啥的，就足以说明文章结尾部分的重要性了。但是我现在这个结尾好像有点短了啊，我应该怎么加点内容呢，欸，要不就这样吧，行那就先这样吧。
-				</p>
-			</div>
-		</div>
-	</div>
+
+	<?php require_once '/component/footer.php' ?>
 </body>
 </html>

@@ -159,9 +159,9 @@
 					        legend: {
 					            x: 'right',
 					            data: ['GDP','第一产业', '第二产业', '第三产业'/*,'工资', '房价'*/],
-					            // selected: {
-					            //     'GDP': false, '工资': false, '房价': false
-					            // }
+					            selected: {
+					                'GDP': true, '第一产业': false, '第二产业': false, '第三产业': false
+					            }
 					        },
 					        calculable : true,
 					        grid: {

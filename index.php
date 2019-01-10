@@ -7,7 +7,9 @@
   <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="/css/open-iconic-bootstrap.min.css">
 <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
+<style>
+	
+</style>
 </head>
 <body>
 	<?php require_once '/component/header.php' ?>
@@ -22,16 +24,16 @@
 			</div>
 		</div>
 		<div class="row" clearfix style="vertical-align: middle;">
-			<div class="col" style="background-color: #000; height: 400px;">
+			<div class="col" style="background-color: #E0E0E0; height: 400px;text-align: center;">
 				<h1>地图展示</h1>
 			</div>
-			<div class="col" style="background-color: #033; height: 400px;">
+			<div class="col" style="background-color:#E8E8E8; height: 400px;text-align: center;">
 				<h1>常驻人口增长率</h1>
 			</div>
-			<div class="col" style="background-color: #066; height: 400px;">
+			<div class="col" style="background-color:#F0F0F0; height: 400px;text-align: center;">
 				<h1>GDP与三大产业</h1>
 			</div>
-			<div class="col" style="background-color: #099; height: 400px;">
+			<div class="col" style="background-color:#F8F8F8; height: 400px;text-align: center;">
 				<h1>人均工资与房价</h1>
 			</div>
 		</div>
